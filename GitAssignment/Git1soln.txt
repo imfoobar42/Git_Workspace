@@ -1,0 +1,158 @@
+Git Assignment 1
+
+Install GIT & make sure it is added into PATH.
+Use GIT as local VCS. Steps to follow:
+1.	Create a directory ‘project_dir’ & cd to ‘project_dir’. 
+
+
+asing394@IN-MUM-LDJC018 MINGW64 /c/Akash/GitWorkspace
+$ mkdir project_dir
+
+asing394@IN-MUM-LDJC018 MINGW64 /c/Akash/GitWorkspace
+$ cd project_dir/
+
+2.	Initialize git version database. (git init)
+
+$ git init
+Initialized empty Git repository in C:/Akash/GitWorkspace/project_dir/.git/
+
+
+3.	Create a new file index.html.
+
+asing394@IN-MUM-LDJC018 MINGW64 /c/Akash/GitWorkspace/project_dir (master)
+$ touch index.html
+
+
+4.	Check the git status. You should find index.html as untracked file.
+
+$ git status
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        index.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+
+5.	Stage the index.html file.
+
+asing394@IN-MUM-LDJC018 MINGW64 /c/Akash/GitWorkspace/project_dir (master)
+$ git add index.html
+
+
+6.	Commit index.html
+
+$ git commit -m "First commit"
+
+
+7.	Make few changes in index.html & create a new file info.txt file.
+
+Changes made
+$ touch info.txt
+
+
+8.	Check git status. You should find index.html & info.txt as untracked files.
+
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        info.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+
+9.	Configure GIT to ignore all txt files.
+
+$ touch .gitignore
+
+Changes made in .gitignore to ignore all txt files by stating *.txt
+
+10.	Again check the git status. You should find only index.html as untracked file.
+
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        .gitignore
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+
+11.	State & commit index.html
+
+$ git commit -am "Commit index.html"
+
+
+12.	Log all your comments so far.
+
+$ git log
+commit 7d07c44d2cc5960697ffae1b4514335eb71e8729 (HEAD -> master)
+Author: Singh <akash.m.singh@capgemini.com>
+Date:   Wed Mar 6 09:18:48 2019 +0530
+
+    Commit index.html
+
+commit 250d753bb1a95fffd5177c72e06f9dbb27928c6d
+Author: Singh <akash.m.singh@capgemini.com>
+Date:   Wed Mar 6 09:11:54 2019 +0530
+
+    First commit
+
+
+13.	Make some changes in index.html.
+
+Changes made
+
+14.	Revert the change made in the previous step using git command.
+
+$ git checkout index.html
+
+
+15.	Again change index.html.
+
+Changes made
+
+16.	Stage index.html
+
+$ git add .
+
+17.	Revert back the last stage.
+
+$ git reset HEAD index.html
+Unstaged changes after reset:
+M       index.html
+
+
+18.	Rename ‘add’ command to ‘my-add’.
+
+git config --global alias.my-add add
+
+19.	Using my_add command Stage index.html again & commit the changes.
+
+$ git my-add index.html
+
+
+20.	Revert the last commit.
+$ git revert 7d07c44d2cc5960697ffae1b4514335eb71e8729
+
+
+
